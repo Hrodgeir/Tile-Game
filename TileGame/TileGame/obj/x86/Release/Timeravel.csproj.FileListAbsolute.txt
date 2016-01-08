@@ -1,0 +1,10 @@
+D:\Game Development\TileGame\TileGame\TileGame\bin\x86\Release\Content\tile-grid.xnb
+D:\Game Development\TileGame\TileGame\TileGame\bin\x86\Release\Content\tile-grass.xnb
+D:\Game Development\TileGame\TileGame\TileGame\bin\x86\Release\Content\character.xnb
+D:\Game Development\TileGame\TileGame\TileGame\bin\x86\Release\Content\character-selected.xnb
+D:\Game Development\TileGame\TileGame\TileGame\bin\x86\Release\TileGame.exe
+D:\Game Development\TileGame\TileGame\TileGame\bin\x86\Release\TileGame.pdb
+D:\Game Development\TileGame\TileGame\TileGame\obj\x86\Release\Microsoft.Xna.Framework.RuntimeProfile.txt
+D:\Game Development\TileGame\TileGame\TileGame\obj\x86\Release\TileGame.exe
+D:\Game Development\TileGame\TileGame\TileGame\obj\x86\Release\TileGame.pdb
+D:\Game Development\TileGame\TileGame\TileGame\obj\x86\Release\Timeravel.csprojResolveAssemblyReference.cache

@@ -16,11 +16,11 @@ namespace TileGame
             textureList = newTextureList;
             tileList = new List<Tile>();
 
-            for (int x = 3; x < (viewport.Width - 128) / 32; x++)
+            for (int x = 0; x < (viewport.Width) / 32; x++)
             {
-                for (int y = 3; y < (viewport.Height - 128) / 32; y++)
+                for (int y = 0; y < (viewport.Height - 128) / 32; y++)
                 {
-                    Tile tile = new Tile(textureList.Get("tile-grid"), new Vector2(x * 32, y * 32));
+                    Tile tile = new Tile(textureList.Get("tile-grass"), new Vector2(x * 32, y * 32));
                     tileList.Add(tile);
                 }
             }
@@ -120,32 +120,35 @@ namespace TileGame
 
             foreach (Tile tile in tileList)
             {
-                // Up
-                if (Math.Abs(currentTile.position.X - tile.position.X) < 1 
-                    && Math.Abs(currentTile.position.Y - 32 - tile.position.Y) < 1)
+                if (!tile.restricted)
                 {
-                    neighbourTiles.Add(tile);
-                }
+                    // Up
+                    if (Math.Abs(currentTile.position.X - tile.position.X) < 1
+                        && Math.Abs(currentTile.position.Y - 32 - tile.position.Y) < 1)
+                    {
+                        neighbourTiles.Add(tile);
+                    }
 
-                // Right
-                if (Math.Abs(currentTile.position.X + 32 - tile.position.X) < 1
-                    && Math.Abs(currentTile.position.Y - tile.position.Y) < 1)
-                {
-                    neighbourTiles.Add(tile);
-                }
+                    // Right
+                    if (Math.Abs(currentTile.position.X + 32 - tile.position.X) < 1
+                        && Math.Abs(currentTile.position.Y - tile.position.Y) < 1)
+                    {
+                        neighbourTiles.Add(tile);
+                    }
 
-                // Down
-                if (Math.Abs(currentTile.position.X - tile.position.X) < 1
-                    && Math.Abs(currentTile.position.Y + 32 - tile.position.Y) < 1)
-                {
-                    neighbourTiles.Add(tile);
-                }
+                    // Down
+                    if (Math.Abs(currentTile.position.X - tile.position.X) < 1
+                        && Math.Abs(currentTile.position.Y + 32 - tile.position.Y) < 1)
+                    {
+                        neighbourTiles.Add(tile);
+                    }
 
-                // Left
-                if (Math.Abs(currentTile.position.X - 32 - tile.position.X) < 1
-                    && Math.Abs(currentTile.position.Y - tile.position.Y) < 1)
-                {
-                    neighbourTiles.Add(tile);
+                    // Left
+                    if (Math.Abs(currentTile.position.X - 32 - tile.position.X) < 1
+                        && Math.Abs(currentTile.position.Y - tile.position.Y) < 1)
+                    {
+                        neighbourTiles.Add(tile);
+                    }
                 }
             }
 
@@ -158,7 +161,7 @@ namespace TileGame
             {
                 if (tile.isPath)
                 {
-                    spriteBatch.Draw(textureList.Get("tile-grass"), tile.position, Color.White);
+                    spriteBatch.Draw(textureList.Get("tile-grass-path"), tile.position, Color.White);
                 }
                 else
                 {

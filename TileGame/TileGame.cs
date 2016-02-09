@@ -12,8 +12,8 @@ namespace TileGame
         public TextureList textureList;
 
         private Camera camera;
-        private KeyboardState currentKeyboardState;
-        private KeyboardState previousKeyboardState;
+        private KeyboardState currentKeyState;
+        private KeyboardState previousKeyState;
         private MouseState currentMouseState;
         private MouseState previousMouseState;
         private Map map;
@@ -22,8 +22,8 @@ namespace TileGame
         public TileGame()
         {
             graphics = new GraphicsDeviceManager(this);
-            graphics.PreferredBackBufferWidth = 1024;
-            graphics.PreferredBackBufferHeight = 600;
+            graphics.PreferredBackBufferWidth = 512;
+            graphics.PreferredBackBufferHeight = 512;
             graphics.IsFullScreen = false;
             Content.RootDirectory = "Content";
         }
@@ -70,18 +70,18 @@ namespace TileGame
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
-            previousKeyboardState = currentKeyboardState;
-            currentKeyboardState = Keyboard.GetState();
+            previousKeyState = currentKeyState;
+            currentKeyState = Keyboard.GetState();
             previousMouseState = currentMouseState;
             currentMouseState = Mouse.GetState();
 
             // Exit
-            if (currentKeyboardState.IsKeyDown(Keys.Escape))
+            if (currentKeyState.IsKeyDown(Keys.Escape))
             {
                 Exit();
             }
 
-            character.Update(currentMouseState, previousMouseState, gameTime, map);
+            character.Update(currentMouseState, previousMouseState, currentKeyState, previousKeyState, gameTime, map);
 
             base.Update(gameTime);
         }

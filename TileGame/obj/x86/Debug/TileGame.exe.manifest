@@ -103,14 +103,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="TileGame.exe" size="16896">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="TileGame.exe" size="17408">
       <assemblyIdentity name="TileGame" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>Rk7/0C6iiWyzh2G/TVOKS8vrjK8=</dsig:DigestValue>
+        <dsig:DigestValue>ToSJ5MIuXahsKoh/RaZ/bFEHkPk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -138,7 +138,16 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>TpRaBQlCSoUeiDCkJslayxRbt7Q=</dsig:DigestValue>
+      <dsig:DigestValue>jkU1/Q+Nr+BSxnUF//LjQHEQx00=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\tile-grass-path.xnb" size="4283">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>AWspN/hl/w/jpBzSKtdaKFgWBdM=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\tile-grid.xnb" size="4283">

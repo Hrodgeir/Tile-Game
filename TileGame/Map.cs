@@ -58,7 +58,7 @@ namespace TileGame
 
                 foreach (Tile neighbour in GetNeighbourTiles(current))
                 {
-                    var tempCurrentDistance = currentDistance[current] + 1;
+                    int tempCurrentDistance = currentDistance[current] + 1;
 
                     if (closedList.Contains(neighbour) && tempCurrentDistance >= currentDistance[neighbour])
                     {
@@ -158,7 +158,7 @@ namespace TileGame
             {
                 if (tile.isPath)
                 {
-                    spriteBatch.Draw(textureList.Get("tile-hover"), tile.position, Color.White);
+                    spriteBatch.Draw(textureList.Get("tile-grass"), tile.position, Color.White);
                 }
                 else
                 {

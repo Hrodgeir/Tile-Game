@@ -8,6 +8,7 @@ namespace TileGame
 {
     public class Character
     {
+        public List<Tile> path;
         public Vector2 speed;
         public Vector2 position;
         public Vector2 minPosition;
@@ -39,8 +40,6 @@ namespace TileGame
 
         public void Update(MouseState currentMouseState, MouseState previousMouseState, GameTime gameTime, Map map)
         {
-            List<Tile> path = new List<Tile>();
-
             // Selects or deselects the character.
             if (Math.Abs(currentMouseState.X - (position.X + 16)) <= 16 
                 && Math.Abs(currentMouseState.Y - (position.Y + 16)) <= 16
@@ -55,21 +54,22 @@ namespace TileGame
                 && previousMouseState.RightButton == ButtonState.Pressed
                 && currentMouseState.RightButton == ButtonState.Released)
             {
-                foreach (Tile tile in map.tileList)
+                foreach (Tile mapTile in map.tileList)
                 {
-                    if (Math.Abs(currentMouseState.X - (tile.position.X + 16)) <= 16
-                        && Math.Abs(currentMouseState.Y - (tile.position.Y + 16)) <= 16)
+                    if (Math.Abs(currentMouseState.X - (mapTile.position.X + 16)) <= 16
+                        && Math.Abs(currentMouseState.Y - (mapTile.position.Y + 16)) <= 16)
                     {
-                        path = map.FindPath(currentTile, tile);
+                        path = map.FindPath(currentTile, mapTile);
+                        
+                        currentTile = mapTile;
+                        position = mapTile.position;
+
+                        foreach (Tile pathTile in path)
+                        {
+                            pathTile.isPath = true;
+                        }
                     }
                 }
-            }
-
-            foreach (Tile tile in path)
-            {
-                KeyboardState keyState = new KeyboardState();
-                if (keyState.IsKeyDown(Keys.A))
-                    position = tile.position;
             }
         }
     }

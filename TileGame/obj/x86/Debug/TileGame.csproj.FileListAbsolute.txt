@@ -45,3 +45,4 @@ D:\Google Drive\Game Development\TileGame\TileGame\obj\x86\Debug\TileGame.exe.ma
 D:\Google Drive\Game Development\TileGame\TileGame\obj\x86\Debug\TileGame.application
 D:\Google Drive\Game Development\TileGame\TileGame\bin\x86\Debug\Content\tile-grass-path.xnb
 D:\Google Drive\Game Development\TileGame\TileGame\obj\x86\Debug\TileGame.csprojResolveAssemblyReference.cache
+D:\Google Drive\Game Development\TileGame\TileGame\bin\x86\Debug\Content\title-screen.xnb

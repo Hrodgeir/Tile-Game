@@ -103,14 +103,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="TileGame.exe" size="17408">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="TileGame.exe" size="17920">
       <assemblyIdentity name="TileGame" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>ToSJ5MIuXahsKoh/RaZ/bFEHkPk=</dsig:DigestValue>
+        <dsig:DigestValue>7XwoHQM8NG6Wwgkyhmd9jSrlTH8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -166,6 +166,15 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
       <dsig:DigestValue>7/wE3Aa8lsTwEwkcUITgFVqsGVs=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\title-screen.xnb" size="1048763">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>dc1wom1twUT8Oos4XJhPvmRamms=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Game.ico" size="4286">

@@ -10,12 +10,14 @@ namespace TileGame
         public GraphicsDeviceManager graphics;
         public SpriteBatch spriteBatch;
         public TextureList textureList;
+        public GameState gameState;
 
         private Camera camera;
         private KeyboardState currentKeyState;
         private KeyboardState previousKeyState;
         private MouseState currentMouseState;
         private MouseState previousMouseState;
+        private TitleScreen titleScreen;
         private Map map;
         private Character character;
 
@@ -36,7 +38,8 @@ namespace TileGame
         /// </summary>
         protected override void Initialize()
         {
-            this.IsMouseVisible = true;
+            IsMouseVisible = true;
+            gameState = GameState.TitleScreen;
             camera = new Camera(graphics.GraphicsDevice.Viewport);
             base.Initialize();
         }
@@ -49,6 +52,7 @@ namespace TileGame
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            titleScreen = new TitleScreen();
             textureList = new TextureList(Content);
             map = new Map(spriteBatch, textureList, graphics.GraphicsDevice.Viewport);
             character = new Character(graphics.GraphicsDevice.Viewport, map.tileList.First());
@@ -76,12 +80,20 @@ namespace TileGame
             currentMouseState = Mouse.GetState();
 
             // Exit
-            if (currentKeyState.IsKeyDown(Keys.Escape))
+            if (gameState == GameState.Quit || currentKeyState.IsKeyDown(Keys.Escape))
             {
                 Exit();
             }
 
-            character.Update(currentMouseState, previousMouseState, currentKeyState, previousKeyState, gameTime, map);
+            if (gameState == GameState.TitleScreen)
+            {
+                titleScreen.Update(currentMouseState, previousMouseState, currentKeyState, previousKeyState);
+                gameState = titleScreen.gameState;
+            }
+            else if (gameState == GameState.Game)
+            {
+                character.Update(currentMouseState, previousMouseState, currentKeyState, previousKeyState, gameTime, map);
+            }
 
             base.Update(gameTime);
         }
@@ -105,8 +117,15 @@ namespace TileGame
                 camera.GetViewMatrix(new Vector2(0.5f))
             );
 
-            map.Draw(spriteBatch, textureList);
-            character.Draw(spriteBatch, textureList);
+            if (gameState == GameState.TitleScreen)
+            {
+                titleScreen.Draw(spriteBatch, textureList);
+            }
+            else if (gameState == GameState.Game)
+            {
+                map.Draw(spriteBatch, textureList);
+                character.Draw(spriteBatch, textureList);
+            }
 
             spriteBatch.End();
 

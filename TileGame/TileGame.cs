@@ -81,7 +81,6 @@ namespace TileGame
                 Exit();
             }
 
-            //camera.Update(currentMouseState, previousMouseState);
             character.Update(currentMouseState, previousMouseState, gameTime, map);
 
             base.Update(gameTime);

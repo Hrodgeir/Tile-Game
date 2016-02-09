@@ -41,7 +41,8 @@ namespace TileGame
         {
             List<Tile> path = new List<Tile>();
 
-            if (Math.Abs(currentMouseState.X - (position.X + 16)) <= 16
+            // Selects or deselects the character.
+            if (Math.Abs(currentMouseState.X - (position.X + 16)) <= 16 
                 && Math.Abs(currentMouseState.Y - (position.Y + 16)) <= 16
                 && previousMouseState.LeftButton == ButtonState.Pressed
                 && currentMouseState.LeftButton == ButtonState.Released)
@@ -49,6 +50,7 @@ namespace TileGame
                 selected = !selected;
             }
 
+            // Moves the selected character.
             if (selected
                 && previousMouseState.RightButton == ButtonState.Pressed
                 && currentMouseState.RightButton == ButtonState.Released)
@@ -65,53 +67,10 @@ namespace TileGame
 
             foreach (Tile tile in path)
             {
-                position = tile.position;
-                //currentTile = tile;
+                KeyboardState keyState = new KeyboardState();
+                if (keyState.IsKeyDown(Keys.A))
+                    position = tile.position;
             }
-
-            //if (speed == Vector2.Zero)
-            //{
-            //     Move Up
-            //    if (selected && previousMouseState.RightButton == ButtonState.Pressed
-            //        && currentMouseState.RightButton == ButtonState.Released
-            //        && Math.Round(position.Y, 2) != minPosition.Y)
-            //    {
-            //        speed.Y = -speedValue;
-            //    }
-
-            //    // Move Left
-            //    if (selected && previousKeyboardState.IsKeyDown(Keys.A)
-            //        && currentKeyboardState.IsKeyUp(Keys.A)
-            //        && Math.Round(position.X, 2) != minPosition.X)
-            //    {
-            //        speed.X = -speedValue;
-            //    }
-
-            //    // Move Down
-            //    if (selected && previousKeyboardState.IsKeyDown(Keys.S)
-            //        && currentKeyboardState.IsKeyUp(Keys.S)
-            //        && Math.Round(position.Y, 2) != maxPosition.Y)
-            //    {
-            //        speed.Y = speedValue;
-            //    }
-
-            //    // Move Right
-            //    if (selected && previousKeyboardState.IsKeyDown(Keys.D)
-            //        && currentKeyboardState.IsKeyUp(Keys.D)
-            //        && Math.Round(position.X, 2) != maxPosition.X)
-            //    {
-            //        speed.X = speedValue;
-            //    }
-            //}
-
-            //position += speed * (float)gameTime.ElapsedGameTime.TotalSeconds;
-            //tileDistance += Math.Abs(speed.X) + Math.Abs(speed.Y);
-
-            //if (tileDistance >= 1152)
-            //{
-            //    tileDistance = 0.0f;
-            //    speed = Vector2.Zero;
-            //}
         }
     }
 }

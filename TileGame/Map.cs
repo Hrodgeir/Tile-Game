@@ -46,7 +46,7 @@ namespace TileGame
             while (openList.Count > 0)
             {
                 // Gets the node with the lowest estimated cost to the finish.
-                var current = (from p in openList orderby predictedDistance[p] ascending select p).First();
+                Tile current = (from p in openList orderby predictedDistance[p] ascending select p).First();
 
                 if (current.position.X == finish.position.X && current.position.Y == finish.position.Y)
                 {

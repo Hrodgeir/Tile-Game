@@ -1,0 +1,30 @@
+D:\Game Development\TileGame\TileGame\bin\x86\Debug\Content\tile-grid.xnb
+D:\Game Development\TileGame\TileGame\bin\x86\Debug\Content\tile-grass.xnb
+D:\Game Development\TileGame\TileGame\bin\x86\Debug\Content\character.xnb
+D:\Game Development\TileGame\TileGame\bin\x86\Debug\Content\character-selected.xnb
+D:\Game Development\TileGame\TileGame\bin\x86\Debug\Content\tile-hover.xnb
+D:\Game Development\TileGame\TileGame\bin\x86\Debug\TileGame.exe
+D:\Game Development\TileGame\TileGame\bin\x86\Debug\TileGame.pdb
+D:\Game Development\TileGame\TileGame\bin\x86\Debug\Microsoft.Xna.Framework.dll
+D:\Game Development\TileGame\TileGame\bin\x86\Debug\Microsoft.Xna.Framework.Game.dll
+D:\Game Development\TileGame\TileGame\bin\x86\Debug\Microsoft.Xna.Framework.GamerServices.dll
+D:\Game Development\TileGame\TileGame\bin\x86\Debug\Microsoft.Xna.Framework.Graphics.dll
+D:\Game Development\TileGame\TileGame\bin\x86\Debug\Microsoft.Xna.Framework.Input.Touch.dll
+D:\Game Development\TileGame\TileGame\bin\x86\Debug\Microsoft.Xna.Framework.xml
+D:\Game Development\TileGame\TileGame\bin\x86\Debug\Microsoft.Xna.Framework.Game.xml
+D:\Game Development\TileGame\TileGame\bin\x86\Debug\Microsoft.Xna.Framework.Graphics.xml
+D:\Game Development\TileGame\TileGame\bin\x86\Debug\Microsoft.Xna.Framework.GamerServices.xml
+D:\Game Development\TileGame\TileGame\bin\x86\Debug\Microsoft.Xna.Framework.Input.Touch.xml
+D:\Game Development\TileGame\TileGame\obj\x86\Debug\TileGame.csprojResolveAssemblyReference.cache
+D:\Game Development\TileGame\TileGame\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+D:\Game Development\TileGame\TileGame\obj\x86\Debug\TileGame.exe
+D:\Game Development\TileGame\TileGame\obj\x86\Debug\TileGame.pdb
+D:\Google Drive\Game Development\TileGame\TileGame\bin\x86\Debug\Content\tile-grid.xnb
+D:\Google Drive\Game Development\TileGame\TileGame\bin\x86\Debug\Content\tile-grass.xnb
+D:\Google Drive\Game Development\TileGame\TileGame\bin\x86\Debug\Content\character.xnb
+D:\Google Drive\Game Development\TileGame\TileGame\bin\x86\Debug\Content\character-selected.xnb
+D:\Google Drive\Game Development\TileGame\TileGame\bin\x86\Debug\Content\tile-hover.xnb
+D:\Google Drive\Game Development\TileGame\TileGame\obj\x86\Debug\TileGame.csprojResolveAssemblyReference.cache
+D:\Google Drive\Game Development\TileGame\TileGame\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+D:\Google Drive\Game Development\TileGame\TileGame\obj\x86\Debug\TileGame.exe
+D:\Google Drive\Game Development\TileGame\TileGame\obj\x86\Debug\TileGame.pdb

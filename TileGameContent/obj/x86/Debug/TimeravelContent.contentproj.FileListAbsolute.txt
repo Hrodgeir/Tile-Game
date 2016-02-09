@@ -1,0 +1,2 @@
+D:\Game Development\TileGame\TileGameContent\obj\x86\Debug\TimeravelContent.contentprojResolveAssemblyReference.cache
+D:\Google Drive\Game Development\TileGame\TileGameContent\obj\x86\Debug\TimeravelContent.contentprojResolveAssemblyReference.cache

@@ -10,7 +10,6 @@ namespace TileGame
     {
         public int pathIndex;
         public Tile[] path;
-        public Vector2 speed;
         public Vector2 position;
         public Vector2 minPosition;
         public Vector2 maxPosition;
@@ -19,7 +18,6 @@ namespace TileGame
 
         public Character(Viewport viewport, Tile tile)
         {
-            speed = Vector2.Zero;
             position = tile.position;
             minPosition = Vector2.Zero;
             maxPosition = new Vector2(viewport.Width, viewport.Height);
@@ -67,7 +65,8 @@ namespace TileGame
             {
                 foreach (Tile mapTile in map.tileList)
                 {
-                    if (Math.Abs(currentMouseState.X - (mapTile.position.X + 15)) <= 15
+                    if (!mapTile.restricted
+                        && Math.Abs(currentMouseState.X - (mapTile.position.X + 15)) <= 15
                         && Math.Abs(currentMouseState.Y - (mapTile.position.Y + 15)) <= 15)
                     {
                         // Clear the old path.
@@ -90,7 +89,7 @@ namespace TileGame
                 }
             }
 
-            // Moves the character one tile along the path when the enter key is pressed.
+            // Moves the character one tile along the path when the space bar is pressed.
             if (selected && path != null && pathIndex < path.Length-1 && previousKeyState.IsKeyDown(Keys.Space) && currentKeyState.IsKeyUp(Keys.Space))
             {
                 Tile nextTile = path[++pathIndex];
@@ -99,6 +98,7 @@ namespace TileGame
                 nextTile.isPath = false;
             }
 
+            // Clears the path if the character gets deselected.
             if (!selected)
             {
                 path = null;

@@ -16,16 +16,16 @@ namespace TileGame
 
         public void Update(MouseState currentMouseState, MouseState previousMouseState, KeyboardState currentKeyState, KeyboardState previousKeyState)
         {
-            if (Math.Abs(currentMouseState.X) >= 118 && Math.Abs(currentMouseState.X) <= 404
-                && Math.Abs(currentMouseState.Y) >= 153 && Math.Abs(currentMouseState.Y) <= 287
+            if (Math.Abs(currentMouseState.X) >= 128 && Math.Abs(currentMouseState.X) <= 383
+                && Math.Abs(currentMouseState.Y) >= 192 && Math.Abs(currentMouseState.Y) <= 319
                 && previousMouseState.LeftButton == ButtonState.Pressed
                 && currentMouseState.LeftButton == ButtonState.Released)
             {
                 gameState = GameState.Game;
             }
 
-            if (Math.Abs(currentMouseState.X) >= 118 && Math.Abs(currentMouseState.X) <= 404
-                && Math.Abs(currentMouseState.Y) >= 332 && Math.Abs(currentMouseState.Y) <= 466
+            if (Math.Abs(currentMouseState.X) >= 128 && Math.Abs(currentMouseState.X) <= 383
+                && Math.Abs(currentMouseState.Y) >= 352 && Math.Abs(currentMouseState.Y) <= 479
                 && previousMouseState.LeftButton == ButtonState.Pressed
                 && currentMouseState.LeftButton == ButtonState.Released)
             {

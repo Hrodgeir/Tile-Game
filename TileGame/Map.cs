@@ -20,8 +20,17 @@ namespace TileGame
             {
                 for (int y = 0; y < (viewport.Height - 128) / 32; y++)
                 {
-                    Tile tile = new Tile(textureList.Get("tile-grass"), new Vector2(x * 32, y * 32));
-                    tileList.Add(tile);
+                    if ((x == 3 && y < 10) || (x > 2 && x < 4 && y > 4 && y < 10))
+                    {
+                        Tile mountainTile = new Tile(textureList.Get("tile-mountain"), new Vector2(x * 32, y * 32));
+                        mountainTile.restricted = true;
+                        tileList.Add(mountainTile);
+                    }
+                    else
+                    {
+                        Tile grassTile = new Tile(textureList.Get("tile-grass"), new Vector2(x * 32, y * 32));
+                        tileList.Add(grassTile);
+                    }
                 }
             }
         }
@@ -41,7 +50,7 @@ namespace TileGame
             Dictionary<Tile, float> predictedDistance = new Dictionary<Tile, float>();
 
             currentDistance.Add(start, 0);
-            predictedDistance.Add(start, Math.Abs(start.position.X - finish.position.X) + Math.Abs(start.position.Y - finish.position.Y));
+            predictedDistance.Add(start, start.position.X - finish.position.X + start.position.Y - finish.position.Y);
 
             while (openList.Count > 0)
             {
@@ -81,7 +90,7 @@ namespace TileGame
                             + Math.Abs(neighbour.position.X - finish.position.X) 
                             + Math.Abs(neighbour.position.Y - finish.position.Y);
 
-                        if (!openList.Contains(neighbour))
+                        if (!openList.Contains(neighbour) && !neighbour.restricted)
                         {
                             openList.Add(neighbour);
                         }
@@ -120,35 +129,32 @@ namespace TileGame
 
             foreach (Tile tile in tileList)
             {
-                if (!tile.restricted)
+                // Up
+                if (Math.Abs(currentTile.position.X - tile.position.X) < 1
+                    && Math.Abs(currentTile.position.Y - 32 - tile.position.Y) < 1)
                 {
-                    // Up
-                    if (Math.Abs(currentTile.position.X - tile.position.X) < 1
-                        && Math.Abs(currentTile.position.Y - 32 - tile.position.Y) < 1)
-                    {
-                        neighbourTiles.Add(tile);
-                    }
+                    neighbourTiles.Add(tile);
+                }
 
-                    // Right
-                    if (Math.Abs(currentTile.position.X + 32 - tile.position.X) < 1
-                        && Math.Abs(currentTile.position.Y - tile.position.Y) < 1)
-                    {
-                        neighbourTiles.Add(tile);
-                    }
+                // Right
+                if (Math.Abs(currentTile.position.X + 32 - tile.position.X) < 1
+                    && Math.Abs(currentTile.position.Y - tile.position.Y) < 1)
+                {
+                    neighbourTiles.Add(tile);
+                }
 
-                    // Down
-                    if (Math.Abs(currentTile.position.X - tile.position.X) < 1
-                        && Math.Abs(currentTile.position.Y + 32 - tile.position.Y) < 1)
-                    {
-                        neighbourTiles.Add(tile);
-                    }
+                // Down
+                if (Math.Abs(currentTile.position.X - tile.position.X) < 1
+                    && Math.Abs(currentTile.position.Y + 32 - tile.position.Y) < 1)
+                {
+                    neighbourTiles.Add(tile);
+                }
 
-                    // Left
-                    if (Math.Abs(currentTile.position.X - 32 - tile.position.X) < 1
-                        && Math.Abs(currentTile.position.Y - tile.position.Y) < 1)
-                    {
-                        neighbourTiles.Add(tile);
-                    }
+                // Left
+                if (Math.Abs(currentTile.position.X - 32 - tile.position.X) < 1
+                    && Math.Abs(currentTile.position.Y - tile.position.Y) < 1)
+                {
+                    neighbourTiles.Add(tile);
                 }
             }
 

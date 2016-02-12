@@ -110,7 +110,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>7XwoHQM8NG6Wwgkyhmd9jSrlTH8=</dsig:DigestValue>
+        <dsig:DigestValue>plmUf3MolX7Mrk7YKJpra4sfTk0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -168,13 +168,22 @@
       <dsig:DigestValue>7/wE3Aa8lsTwEwkcUITgFVqsGVs=</dsig:DigestValue>
     </hash>
   </file>
+  <file name="Content\tile-mountain.xnb" size="4283">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>bqEBqnLO/AsviBiIc9dIsHpUpAE=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="Content\title-screen.xnb" size="1048763">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>dc1wom1twUT8Oos4XJhPvmRamms=</dsig:DigestValue>
+      <dsig:DigestValue>e0ESL6ySCXx2FqRlDwaP44BEVxY=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Game.ico" size="4286">
@@ -186,13 +195,13 @@
       <dsig:DigestValue>/y21PfwGnUAkwpPwwaFuIIyWENo=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="GameThumbnail.png" size="5734">
+  <file name="GameThumbnail.png" size="1512">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>diNvdcDpDtGEMuMQIHpkKK3qVHc=</dsig:DigestValue>
+      <dsig:DigestValue>HYl6SPVQupKUN3ZfkPHrc+G8/hM=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>
